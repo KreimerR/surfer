@@ -1,0 +1,118 @@
+@use "../globals/_colors" as *;
+@use "../globals/_media-queries" as mq;
+
+.profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+
+    &__left {
+        &--top {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+
+            &--icon {
+                width: 70px;
+                height: 70px;
+                border-radius: 70px;
+                background-color: $color-gray-light-2;
+                object-fit: cover;
+            }
+
+            &--right {
+                display: flex;
+                flex-direction: column;
+
+                &--name {
+                    font-size: 1.5rem;
+                    font-weight: 800;
+                }
+            }
+        }
+
+        &--filters {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+
+            &--posts,
+            &--comments,
+            &--saved,
+            &--upvoted,
+            &--downvoted {
+                padding: 10px;
+                border-radius: 20px;
+                cursor: pointer;
+
+                &-active {
+                    background-color: $color-gray;
+                }
+            }
+        }
+
+        &--content {
+            width: 700px;
+            height: 80%;
+
+            &--filler {
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    &__right {
+        width: 30%;
+        height: 100%;
+    }
+}
+
+@include mq.big {
+    .profile {
+        &__left {
+            padding-left: 20px;
+        }
+    }
+}
+
+@include mq.medium-big {
+    .profile {
+        &__left {
+            &--content {
+                width: 400px;
+            }
+        }
+    }
+}
+
+@include mq.medium-small {
+    .profile {
+        width: unset;
+
+        &__left {
+            padding-left: 10px;
+            padding-right: 10px;
+
+            &--content {
+                width: 100%;
+            }
+
+            &--filters {
+                gap: 1px;
+
+                &--posts,
+                &--comments,
+                &--saved,
+                &--upvoted,
+                &--downvoted {
+                    padding: 8px;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}

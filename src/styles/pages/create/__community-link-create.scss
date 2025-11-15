@@ -1,0 +1,23 @@
+@use "../../globals/_colors" as *;
+
+.communityLinkCreate {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: $color-gray-light-2;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-gray-light-1;
+    }
+
+    &__icon {
+        width: 25px;
+        height: 25px;
+        background-color: $color-gray-light-1;
+        border-radius: 25px;
+        object-fit: cover;
+    }
+}

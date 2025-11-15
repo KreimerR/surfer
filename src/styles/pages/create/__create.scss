@@ -1,0 +1,266 @@
+@use "../../globals/_colors" as *;
+@use "../../globals/_media-queries" as mq;
+
+.create {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    &__left {
+        width: 600px;
+
+        &--titleError,
+        &--communityError,
+        &--nameError,
+        &--iconError,
+        &--shortCommunityDescriptionError,
+        &--longCommunityDescriptionError {
+            color: $color-red;
+        }
+
+        &--type {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &--post,
+            &--community {
+                display: inline-block;
+                padding: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-weight: 600;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-gray-light-2;
+                }
+
+                &-active {
+                    border-bottom: $color-blue solid 3px;
+                }
+            }
+        }
+
+        &--top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+
+            &--left {
+                font-size: 1.8rem;
+                font-weight: 800;
+            }
+
+            &--right {
+                padding: 7px 12px;
+                background-color: $color-blue;
+                border-radius: 20px;
+                border: none;
+                outline: none;
+                color: $color-white;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-blue-dark;
+                }
+            }
+        }
+
+        &--selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            background-color: $color-gray-light-2;
+            border-radius: 20px;
+            padding: 10px 15px;
+            width: 300px;
+            cursor: pointer;
+
+            &-wrong {
+                border: $color-red solid 1px;
+            }
+
+            &-inactive {
+                &:hover {
+                    background-color: $color-gray-light-1;
+                }
+            }
+
+            &--icon {
+                width: 17px;
+            }
+
+            &--communityIcon {
+                width: 22px;
+                height: 22px;
+                border-radius: 22px;
+                object-fit: cover;
+            }
+
+            &--text {
+                font-weight: 700;
+            }
+
+            &--list {
+                position: absolute;
+                background-color: $color-gray-light-2;
+                border-radius: 20px;
+                top: 41px;
+                right: 0;
+                width: 300px;
+                max-height: 300px;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        }
+
+        &--filters {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &--text,
+            &--images {
+                display: inline-block;
+                padding: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-weight: 600;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-gray-light-2;
+                }
+
+                &-active {
+                    border-bottom: $color-blue solid 3px;
+                }
+            }
+        }
+
+        &--title {
+            width: 100%;
+            padding: 20px;
+            border: $color-gray solid 1px;
+            border-radius: 20px;
+            color: $color-gray;
+
+            &-wrong {
+                border: $color-red solid 1px;
+            }
+
+            &--input {
+                width: 100%;
+                font-size: 1rem;
+                background: none;
+                border: none;
+                outline: none;
+
+                &-wrong {
+                    color: $color-red;
+                }
+            }
+        }
+
+        &--editor {
+            width: 100%;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &--imageError {
+                color: $color-red;
+            }
+
+            &--images {
+                text-align: center;
+                padding: 20px;
+                background-color: none;
+                border: $color-gray-darker dotted 1px;
+                border-radius: 20px;
+                color: $color-gray-darker;
+
+                &-wrong {
+                    border: $color-red solid 1px;
+                    color: $color-red;
+                }
+
+                &:last-child {
+                    margin-bottom: 20px;
+                }
+            }
+
+            &--text {
+                padding: 20px;
+                background-color: none;
+                border: $color-gray solid 1px;
+                border-radius: 20px;
+                border-bottom-right-radius: 0;
+                outline: none;
+                font-family: inherit;
+                resize: vertical;
+
+                &-wrong {
+                    border: $color-red solid 1px;
+                    color: $color-red;
+                }
+            }
+        }
+    }
+
+    &__right {
+        width: 30%;
+        height: 100%;
+    }
+}
+
+@include mq.big {
+    .create {
+        padding-left: 20px;
+    }
+}
+
+@include mq.medium {
+    .create {
+        padding-left: 35px;
+    }
+}
+
+@include mq.medium-small {
+    .create {
+        &__left {
+            padding-right: 35px;
+
+            &--selector {
+                width: unset;
+
+                &--list {
+                    width: 100%;
+                }
+            }
+
+            &--top {
+                &--left {
+                    font-size: 1.6rem;
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        &__right {
+            display: none;
+        }
+    }
+}

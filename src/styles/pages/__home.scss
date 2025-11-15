@@ -1,0 +1,63 @@
+@use "../globals/_colors" as *;
+@use "../globals/_media-queries" as mq;
+
+.home {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    &__posts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &--filter {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &--default,
+            &--top {
+                display: inline-block;
+                padding: 10px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-weight: 600;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-gray-light-2;
+                }
+
+                &-active {
+                    border-bottom: $color-blue solid 3px;
+                }
+            }
+        }
+
+        &--filler {
+            padding-bottom: 20px;
+        }
+    }
+
+    &__right {
+        width: 30%;
+        height: 100%;
+    }
+}
+
+@include mq.big {
+    .home {
+        padding-left: 20px;
+    }
+}
+
+@include mq.medium {
+    .home {
+        padding-left: 45px;
+    }
+}

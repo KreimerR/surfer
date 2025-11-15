@@ -1,0 +1,90 @@
+@use "../globals/_colors" as *;
+
+.authorization {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 17px;
+        max-width: 250px;
+
+        &--type {
+            font-size: 1.7rem;
+        }
+
+        &--nameContainer,
+        &--usernameContainer,
+        &--passwordContainer,
+        &--iconContainer {
+
+            &--name,
+            &--username,
+            &--password,
+            &--icon {
+                width: 100%;
+                padding: 20px;
+                border: $color-gray solid 1px;
+                border-radius: 20px;
+                color: $color-gray;
+
+                &-wrong {
+                    border: $color-red solid 1px;
+                }
+
+                &--input {
+                    width: 100%;
+                    font-size: 1rem;
+                    background: none;
+                    border: none;
+                    outline: none;
+
+                    &-wrong {
+                        color: $color-red;
+                    }
+                }
+            }
+
+            &--nameError,
+            &--usernameError,
+            &--passwordError,
+            &--usernameIncorrect,
+            &--passwordIncorrect,
+            &--iconError,
+            &--usernameIncorrectWriting,
+            &--usernameAlreadyExists {
+                color: $color-red;
+            }
+        }
+
+
+        &--changeType {
+            &--button {
+                color: $color-blue;
+                cursor: pointer;
+            }
+        }
+
+        &--button {
+            width: 100%;
+            padding: 17px;
+            border: none;
+            border-radius: 20px;
+            background-color: $color-blue;
+            color: $color-white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-blue-dark;
+                color: $color-gray;
+            }
+        }
+    }
+}

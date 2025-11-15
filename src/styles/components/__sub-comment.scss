@@ -1,0 +1,172 @@
+@use "../globals/_colors" as *;
+@use "../globals/_media-queries" as mq;
+
+.subComment {
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__icon {
+        width: 35px;
+        background-color: $color-gray-light-2;
+        border-radius: 35px;
+        min-height: 35px;
+        cursor: pointer;
+    }
+
+    &__right {
+        width: 100%;
+
+        &--info {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            min-height: 35px;
+
+            &--name {
+                font-weight: 700;
+                cursor: pointer;
+            }
+
+            &--date {
+                color: $color-gray-darker;
+            }
+        }
+
+        &--text {
+            padding-top: 5px;
+        }
+
+        &--stats {
+            display: flex;
+            gap: 10px;
+            padding-top: 10px;
+
+            &--votes {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                border-radius: 20px;
+                padding: 7px;
+                font-weight: 600;
+                background-color: $color-gray-light-1;
+                cursor: pointer;
+
+                &-red {
+                    background-color: $color-red;
+                    color: $color-white;
+                }
+
+                &--upvoteIcon,
+                &--downvoteIcon {
+                    width: 15px;
+                }
+            }
+
+            &--bookmark {
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+                padding: 10px;
+                font-weight: 600;
+                background-color: $color-gray-light-1;
+                cursor: pointer;
+
+                &-red {
+                    background-color: $color-red;
+                    color: $color-white;
+                }
+
+                &--icon {
+                    width: 15px;
+                }
+            }
+
+            &--delete {
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+                padding: 10px;
+                font-weight: 600;
+                background-color: $color-gray-light-1;
+                cursor: pointer;
+
+                &--icon {
+                    width: 15px;
+                }
+            }
+        }
+
+        &--commentTextarea {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-top: 15px;
+            width: 100%;
+            padding: 10px 15px;
+            border: $color-gray-dark solid 1px;
+            border-radius: 25px;
+            color: $color-gray-dark;
+            background-color: $color-white;
+
+            &--textarea {
+                width: 100%;
+                border: none;
+                outline: none;
+                font-size: 1rem;
+                font-family: inherit;
+                padding-top: 5px;
+            }
+
+            &--buttons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &--cancel {
+                    border: none;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    padding: 10px;
+                    background-color: $color-gray-light-1;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $color-gray-light-1-dark;
+                    }
+                }
+
+                &--comment {
+                    border: none;
+                    border-radius: 20px;
+                    font-weight: 600;
+                    padding: 10px;
+                    background-color: $color-blue;
+                    color: $color-white;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $color-blue-dark;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mq.medium-small {
+    .subComment {
+        &__right {
+            &--info {
+                &--date {
+                    display: none;
+                }
+            }
+        }
+    }
+}

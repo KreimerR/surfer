@@ -1,0 +1,173 @@
+@use "../../globals/_colors" as *;
+@use "../../globals/_media-queries" as mq;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-bottom: $color-gray-dark solid 1px;
+    background-color: $color-white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    &__leftMenu {
+        display: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &--icon {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background-color: $color-white;
+        border: $color-gray-dark solid 1px;
+        border-radius: 20px;
+        top: 60px;
+        right: 10px;
+        width: 150px;
+
+        &--profile,
+        &--logOut,
+        &--delete,
+        &--warning {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-gray-light-2;
+            }
+        }
+
+        &--warning {
+            color: $color-red;
+        }
+    }
+
+    &__logo {
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    &__search {
+        position: relative;
+        width: 500px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        background-color: $color-gray-light-2;
+        border-radius: 15px;
+
+        &-inactive {
+            &:hover {
+                background-color: $color-gray;
+            }
+        }
+
+        &--icon {
+            width: 18px;
+        }
+
+        &--input {
+            outline: none;
+            border: none;
+            background: none;
+            min-width: 400px;
+        }
+
+        &--list {
+            position: absolute;
+            background-color: $color-gray-light-2;
+            border-radius: 20px;
+            top: 45px;
+            right: 0;
+            width: 500px;
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &--create {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: none;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-gray-light-2;
+            }
+
+            &--icon {
+                width: 18px;
+            }
+        }
+
+        &--profile {
+            width: 35px;
+            height: 35px;
+            background-color: $color-gray-light-2;
+            border-radius: 35px;
+            cursor: pointer;
+
+            &--icon {
+                width: 35px;
+                height: 35px;
+                border-radius: 35px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@include mq.medium {
+    .header {
+        &__logo {
+            display: none;
+        }
+
+        &__search {
+            width: 50%;
+
+            &--input {
+                min-width: 0;
+                width: 100%;
+            }
+
+            &--list {
+                width: 100%;
+            }
+        }
+
+        &__leftMenu {
+            display: block;
+            padding-right: 10px;
+        }
+    }
+}

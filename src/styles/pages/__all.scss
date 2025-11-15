@@ -1,0 +1,31 @@
+@use "../globals/_colors" as *;
+@use "../globals/_media-queries" as mq;
+
+.all {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    &__posts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &--filler {
+            padding-bottom: 20px;
+        }
+    }
+
+    &__right {
+        width: 30%;
+        height: 100%;
+    }
+}
+
+@include mq.big {
+    .all {
+        padding-left: 20px;
+    }
+}

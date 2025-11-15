@@ -1,0 +1,42 @@
+@use "../globals/_colors" as *;
+@use "../globals/_media-queries" as mq;
+
+.bookmarks {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    &__posts {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        min-width: 700px;
+
+        &--filler {
+            padding-bottom: 20px;
+        }
+    }
+
+    &__right {
+        width: 30%;
+        height: 100%;
+    }
+}
+
+@include mq.big {
+    .bookmarks {
+        padding-left: 20px;
+    }
+}
+
+@include mq.medium {
+    .bookmarks {
+        padding-left: 40px;
+
+        &__posts {
+            min-width: 100%;
+        }
+    }
+}

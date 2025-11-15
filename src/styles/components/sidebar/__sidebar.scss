@@ -1,0 +1,77 @@
+@use "../../globals/_colors" as *;
+@use "../../globals/_media-queries" as mq;
+
+.sidebar {
+    min-width: 250px;
+    padding: 20px;
+    border-right: $color-gray-dark solid 1px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: $color-white;
+    z-index: 2;
+
+    &__links {
+        padding-bottom: 15px;
+        border-bottom: $color-gray-dark solid 1px;
+
+        &--home,
+        &--all,
+        &--bookmarks {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-gray-light-2;
+            }
+
+            &--icon {
+                width: 18px;
+            }
+
+            &-active {
+                background-color: $color-gray;
+
+                &:hover {
+                    background-color: $color-gray;
+                }
+            }
+        }
+    }
+
+    &__communities {
+        padding-top: 15px;
+
+        &--empty {
+            padding: 20px;
+            border-radius: 15px;
+            background-color: $color-gray-light-2;
+            margin-bottom: 10px;
+        }
+
+        &--secondEmpty {
+            padding: 20px;
+            border-radius: 15px;
+            background-color: $color-gray-light-3;
+        }
+    }
+}
+
+@include mq.medium {
+    .sidebar {
+        position: fixed;
+        top: 49px;
+        left: 0;
+        height: calc(100vh - 49px);
+
+        &-hide {
+            display: none;
+        }
+    }
+}
