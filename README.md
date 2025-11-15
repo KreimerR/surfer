@@ -55,7 +55,7 @@ Simply open [this link](https://surfer-liart.vercel.app/) in your browser to acc
 
 ### Communities
 
--   Create and manage communities
+-   Create and delete communities
 -   Follow/unfollow communities
 -   Dedicated pages for each community
 -   Search for communities
@@ -74,7 +74,7 @@ Simply open [this link](https://surfer-liart.vercel.app/) in your browser to acc
 
 ### Other
 
--   LocalStorage integration for preferences
+-   LocalStorage integration
 
 ## Screenshots
 
