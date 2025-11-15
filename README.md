@@ -16,7 +16,7 @@ You can use this project in one of the following ways:
 
 ### Option 1: Use the Live Version
 
-Simply open [this link]() in your browser to access the application online (not available yet)
+Simply open [this link](https://surfer-liart.vercel.app/) in your browser to access the application online
 
 ### Option 2: Run Locally
 
