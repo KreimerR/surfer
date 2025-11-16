@@ -48,3 +48,9 @@
         width: 80%;
     }
 }
+
+@include mq.medium-small {
+    .emptyPost {
+        width: 100%;
+    }
+}

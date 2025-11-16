@@ -33,10 +33,21 @@
 
 @include mq.medium {
     .bookmarks {
-        padding-left: 40px;
+        padding-left: 45px;
 
         &__posts {
-            min-width: 100%;
+            min-width: 70%;
+        }
+    }
+}
+
+@include mq.medium-small {
+    .bookmarks {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &__right {
+            display: none;
         }
     }
 }

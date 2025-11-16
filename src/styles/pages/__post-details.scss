@@ -303,7 +303,31 @@
                     max-width: 100%;
                     height: unset;
                     min-height: 200px;
-                    max-height: 100%;
+                    max-height: 450px;
+                }
+
+                &--images {
+                    min-width: 200px;
+                    max-width: 100%;
+                    height: unset;
+                    min-height: 200px;
+                    max-height: 450px;
+
+                    &--leftArrow {
+                        top: 40%;
+                    }
+
+                    &--rightArrow {
+                        top: 40%;
+                    }
+
+                    &--image {
+                        min-width: 200px;
+                        max-width: 100%;
+                        height: unset;
+                        min-height: 200px;
+                        max-height: 450px;
+                    }
                 }
             }
         }
@@ -312,7 +336,11 @@
 
 @include mq.medium-small {
     .postDetails {
+        padding-left: 10px;
+
         &__main {
+            padding-right: 10px;
+
             &--info {
                 &--right {
                     &--top {
@@ -328,16 +356,6 @@
                     font-size: 1.3rem;
                 }
             }
-        }
-    }
-}
-
-@include mq.medium-small {
-    .postDetails {
-        padding-left: 10px;
-
-        &__main {
-            padding-right: 10px;
         }
 
         &__right {

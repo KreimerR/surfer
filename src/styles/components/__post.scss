@@ -151,8 +151,12 @@
         width: 100%;
 
         &__content {
+            &--image {
+                max-height: 450px;
+            }
+
             &--images {
-                max-height: 300px;
+                max-height: 450px;
 
                 &--leftArrow {
                     top: 45%;
@@ -175,6 +179,12 @@
         &__info {
             &--date {
                 display: none;
+            }
+        }
+
+        &__content {
+            &--image {
+                max-height: 300px;
             }
         }
     }

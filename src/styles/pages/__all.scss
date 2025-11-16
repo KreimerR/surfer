@@ -29,3 +29,20 @@
         padding-left: 20px;
     }
 }
+
+@include mq.medium {
+    .all {
+        padding-left: 45px;
+    }
+}
+
+@include mq.medium-small {
+    .all {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &__right {
+            display: none;
+        }
+    }
+}
