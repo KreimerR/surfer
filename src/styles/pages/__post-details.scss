@@ -355,6 +355,16 @@
                 &--text {
                     font-size: 1.3rem;
                 }
+
+                &--image {
+                    max-height: 300px;
+                }
+
+                &--images {
+                    &--image {
+                        max-height: 300px;
+                    }
+                }
             }
         }
 
