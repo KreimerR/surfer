@@ -46,6 +46,11 @@
         padding-left: 10px;
         padding-right: 10px;
 
+        &__posts {
+            min-width: unset;
+            width: 100%;
+        }
+
         &__right {
             display: none;
         }
