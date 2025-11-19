@@ -525,7 +525,7 @@ export default function PostDetails({
                             <span
                                 className="postDetails__main--text"
                             >
-                                There is no comments.
+                                There are no comments.
                             </span>
                         )
                         : (
